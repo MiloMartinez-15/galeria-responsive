@@ -42,6 +42,7 @@ section{
 .imagen{
     border-radius: 15px;
     overflow: hidden;
+    height: 300px;
     flex-basis: 300px;
     flex-grow: 1;
 }
