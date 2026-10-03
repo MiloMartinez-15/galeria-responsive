@@ -5,10 +5,13 @@ body{
 
 header{
     color: white;
-    background: blue;
+    background: orange;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 header a{
     color: white;
@@ -51,4 +54,61 @@ section{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform .3s, filter .3s
+}
+
+.imagen:hover img{
+    transform: scale(1.5);
+    filter: blur(10px);
+}
+
+.imagen{
+    position: relative;
+}
+
+.imagen::after{
+    content:attr(data-content);
+    position: absolute;
+    bottom:24px;
+    left:0;
+    color:white;
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+}
+
+.imagen:hover::after{
+    opacity: 1;
+}
+
+input{
+    border-radius: 0.4rem;
+    border: orange 2px solid;
+    height: 1.5rem;
+    width: 30rem;
+}
+
+textarea{
+    border: orange 2px solid;
+    border-radius: 10px;
+    width: 30rem;
+    height: 10rem;
+    resize: none;
+}
+
+#send-button{
+    border: orange 2px solid;
+    background-color: orange;
+    color: white;
+    width: 30rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    margin-top: 20px;
+}
+
+#send-button:hover{
+    border: blue 2px solid;
+    background-color: blue;
+    color: black;
 }
